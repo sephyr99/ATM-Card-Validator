@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ATM Card Validator</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <!-- ATM Card Validator HTML Content -->
+    <main class="container">
+      <div class="title">ATM Card Validator</div>
+      <!-- Form Content -->
+      <form
+        onsubmit="handleSubmit(event)"
+        name="cardNumberValidatorForm"
+        method="post"
+      >
+        <!-- Input Fields -->
+        <div class="user-details">
+          <div class="input-box">
+            <span for="Card Holder Name" class="details">Full Name</span>
+            <input
+              type="text"
+              id="fullName"
+              placeholder="Enter your name"
+              required
+            />
+          </div>
+          <div class="input-box">
+            <span for="card Number" class="details">Card Number</span>
+            <input
+              type="number"
+              name="cardNumber"
+              id="cardNumber"
+              class="cardNumber"
+              placeholder="xxxx xxxx xxxx xxxx"
+              required
+            />
+          </div>
+          <div class="input-box">
+            <span for="User email" class="details">Email</span>
+            <input
+              type="text"
+              id="userEmail"
+              placeholder="Enter your email"
+              required
+            />
+          </div>
+          <div class="input-box">
+            <span for="card expiring date" class="details"
+              >Card Expiring Date</span
+            >
+            <input
+              type="text"
+              name="expiringDate"
+              id="expiringDate"
+              class="expiringDate"
+              placeholder="xx/xx"
+              required
+            />
+          </div>
+          <div class="input-box">
+            <span for="User Phone Number" class="details">Phone Number</span>
+            <input
+              type="text"
+              id="userPhoneNumber"
+              placeholder="Enter Your Phone number"
+              required
+            />
+          </div>
+          <div class="input-box">
+            <span for="cvv" class="details">Card CVV</span>
+            <input
+              type="number"
+              name="cvvNumber"
+              id="cvvNumber"
+              class="cvvNumber"
+              placeholder="xxx"
+              required
+            />
+          </div>
+        </div>
+        <!-- Card Type Selection-->
+        <div class="cardtype_container">
+          <img src="/images/master.png" class="cardtype" alt="MasterCard" />
+          <img src="/images/visa.png" class="cardtype" alt="VisaCard" />
+        </div>
+        <!-- Submit Button -->
+        <button type="submit" class="button">Submit</button>
+        <!-- Error and Valid Text -->
+        <p id="error"></p>
+        <p id="valid"></p>
+        <!-- Intruction Text -->
+        <p class="instruction_text">
+          <b>Note: </b>This validator only works for MasterCards and Visa Cards
+        </p>
+      </form>
+    </main>
+  </body>
+  <script src="/js/main.js"></script>
+</html>

@@ -1,0 +1,157 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=poppins:wght@300;400;500;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --bg-color: #d39340;
+  --text-color: #fbf9f7;
+  --ascent-color: #1f1f1f;
+  --overlay-color: #502e2da2;
+  --error-color: #cf0000;
+  --valid-color: #00a700;
+}
+body {
+  position: relative;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-image: url(/images/atm-bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: "Raleway", sans-serif;
+}
+body::after {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background-color: var(--overlay-color);
+}
+
+.container {
+  max-width: 700px;
+  background-color: var(--text-color);
+  padding: 25px 30px;
+  border-radius: 5px;
+  z-index: 20;
+  font-family: "Raleway", sans-serif;
+}
+.container .title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  position: relative;
+}
+.container .title::before {
+  content: "";
+  position: absolute;
+  height: 3px;
+  width: 20%;
+  top: 1.8rem;
+  left: 0;
+  bottom: 0;
+  background-color: var(--bg-color);
+}
+.container form .user-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 2rem 0 0.75rem 0;
+}
+form .user-details .input-box {
+  margin-bottom: 0.9rem;
+  width: calc(100% / 2 - 1.25rem);
+}
+.user-details .input-box .details {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.user-details .input-box input {
+  height: 2.8rem;
+  width: 100%;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding-left: 0.9rem;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.9rem;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+.user-details .input-box input:focus,
+.user-details .input-box input:valid {
+  border-color: var(--bg-color);
+}
+
+.cardtype_container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.cardtype.selected {
+  transform: scale(100%);
+  filter: blur(0px);
+}
+.cardtype {
+  display: inline-block;
+  width: 100px;
+  transform: scale(-70%);
+  filter: blur(10px);
+  transition: all 0.6s ease-in;
+}
+
+form .button {
+  height: 45px;
+  width: 100%;
+  margin: 2rem 0;
+  outline: none;
+  color: var(--text-color);
+  border: none;
+  font-size: 1.2rem;
+  font-weight: 550;
+  border-radius: 5px;
+  letter-spacing: 2px;
+  background-color: var(--bg-color);
+}
+
+form .button:hover {
+  background-color: var(--ascent-color);
+  transition: 500ms ease-in-out;
+}
+.error {
+  font-size: 1.1rem;
+  text-align: center;
+  margin-block-end: 0.7rem;
+  color: var(--error-color);
+}
+.valid {
+  font-size: 1.1rem;
+  text-align: center;
+  margin-block-end: 0.7rem;
+  color: var(--valid-color);
+}
+.instruction_text {
+  text-align: center;
+  color: var(--ascent-color);
+}
+@media (max-width: 584px) {
+  .container {
+    max-width: 100%;
+    margin-inline: 2rem;
+  }
+  form .user-details .input-box {
+    margin-bottom: 0.9rem;
+    width: 100%;
+  }
+  .container form .user-details {
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+  .user-details::-webkit-scrollbar {
+    width: 0;
+  }
+}
